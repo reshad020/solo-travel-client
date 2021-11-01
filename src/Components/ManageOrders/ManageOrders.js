@@ -22,10 +22,10 @@ const ManageOrders = () => {
         })
     }
     return (
-        <div className="grid">
+        <div className="grid ">
             {
                 
-                orders.map(order => <div className="flex mx-auto my-4 gap-8">
+                orders.map(order => <div className="md:flex mx-auto my-4 gap-8">
                         <img src={order.img} alt="" />
                         <div>
                             <h2 className="text-2xl font-bold my-8 text-indigo-800">{order.service}</h2>

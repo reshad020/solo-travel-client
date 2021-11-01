@@ -26,12 +26,12 @@ const MyOrder = () => {
    
     return (
         <div>
-           <div className="text-center">
+           <div className="grid">
            <button className="bg-green-600 py-1 px-6 text-gray-100 mt-2 rounded" onClick={() => handleDelete()}> Refresh</button>
 
            </div>
             {
-                myorders.map(myorder => <div className="flex mx-auto my-4 gap-8">
+                myorders.map(myorder => <div className="md:flex mx-auto my-4 gap-8">
                 <img src={myorder.img} alt="" />
                 <div>
                     <h2 className="text-2xl font-bold my-8 text-indigo-800">{myorder.service}</h2>
