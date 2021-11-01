@@ -9,13 +9,13 @@ const PrivateBooking = () => {
     const {id} = useParams();
     const [singleService,setSingleService] = useState({});
     useEffect(() =>{
-        fetch(`http://localhost:4000/services/${id}`)
+        fetch(`https://evil-cat-68870.herokuapp.com/services/${id}`)
         .then(res => res.json())
         .then(data => setSingleService(data))
     },[])
 
     const handleBooking = () =>{
-        axios.post('http://localhost:4000/addbooking', {
+        axios.post('https://evil-cat-68870.herokuapp.com/addbooking', {
         name :`${user.displayName}`,
         service :`${singleService.name}`,
         img : `${singleService.img}`,

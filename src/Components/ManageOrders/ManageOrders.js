@@ -5,13 +5,13 @@ const ManageOrders = () => {
     const [orders,setOrders] = useState([]);
     useEffect(() => {
         
-        fetch("http://localhost:4000/addbooking")
+        fetch("https://evil-cat-68870.herokuapp.com/addbooking")
         .then(res => res.json())
         .then(data => setOrders(data))
     },[])
 
     const handleDelete = id =>{
-        const url = `http://localhost:4000/addbooking/${id}`;
+        const url = `https://evil-cat-68870.herokuapp.com/addbooking/${id}`;
         fetch(url,{
             method:'DELETE'
         })

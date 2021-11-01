@@ -12,7 +12,7 @@ const AddService = () => {
 
 //    console.log(data);
 
-   axios.post('http://localhost:4000/services',data)
+   axios.post('https://evil-cat-68870.herokuapp.com/services',data)
    .then(res =>{
        alert("added successfully");
        reset();

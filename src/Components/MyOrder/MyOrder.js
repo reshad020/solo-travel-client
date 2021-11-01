@@ -8,7 +8,7 @@ const MyOrder = () => {
 
     useEffect( () => {
         
-         fetch("http://localhost:4000/addbooking")
+         fetch("https://evil-cat-68870.herokuapp.com/addbooking")
         .then(res => res.json())
         .then(data => {
             setOrders(data);
