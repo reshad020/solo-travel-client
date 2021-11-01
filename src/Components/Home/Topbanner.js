@@ -3,7 +3,7 @@ import React from 'react';
 const Topbanner = () => {
     return (
         <div className="container mt-20 md:flex mx-auto gap-96">
-            <div className="flex justify-center md:ml-20 md:mt-12 items-center w-96">
+            <div className="flex justify-center md:ml-20 md:mt-12  items-center w-96">
                 <img src="https://www.thestatesman.com/wp-content/uploads/2020/10/iStock-952716620.jpg" alt="" />
             </div>
             <div className="w-72 ">

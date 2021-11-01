@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-    
+    const{user,logOut} = useAuth();
     const [navbarOpen, setNavbarOpen] = React.useState(false);
 
     return (
@@ -40,23 +41,33 @@ const Header = () => {
                                     <span className="ml-2">Home</span>
                                 </Link>
                             </li>
-                            <li className="nav-item">
+                            {user.email?
+                                <div className="flex">
+                                    <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    to="/service"
+                                    to="/addservice"
                                 >
-                                    <span className="ml-2">Our service</span>
+                                    <span className="ml-2">Add service</span>
                                 </Link>
-                            </li>
-                            <li className="nav-item">
+                                </li>
+                                <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    to="/blogging"
+                                    to="/myorders"
                                 >
-                                    <span className="ml-2">Blogging</span>
+                                    <span className="ml-2">My orders</span>
                                 </Link>
-                            </li>
-                            <li className="nav-item">
+                                </li>
+                                <li className="nav-item">
+                                <Link
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    to="/manageorders"
+                                >
+                                    <span className="ml-2">Manage Orders</span>
+                                </Link>
+                                </li>
+                                <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                                     to="/about"
@@ -64,15 +75,26 @@ const Header = () => {
                                     <span className="ml-2">About us</span>
                                 </Link>
                             </li>
+                                <div className="flex">
+                                        <img src={user.photoURL} alt="" className="w-8 rounded-full"/>
+                                    <button className="px-3 py-2  flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" onClick={logOut}>Logout</button>
+                                    </div>
+                                </div>
+                            :
                             <li className="nav-item">
-                               
-                                    <Link className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" to="/login">Login</Link>
+                                   
 
-                                
+                                    
+                                    <Link className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" to="/login">Login</Link>
                                    
                                 
                                 
                             </li>
+                            }
+                            
+                           
+                           
+                            
                         </ul>
                     </div>
                 </div>
